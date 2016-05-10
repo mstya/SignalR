@@ -14,10 +14,15 @@ namespace SignalR.Hubs
 
         public override Task OnConnected()
         {
-            connections.Add(new ExchangeModel
+            if (connections.All(x => x.ConnectionId != Context.ConnectionId))
             {
-                ConnectionId = Context.ConnectionId
-            });
+                connections.Add(new ExchangeModel
+                {
+                    ConnectionId = Context.ConnectionId
+                });
+
+                COUNT_OF_EXCHANGING = 0;
+            }
 
             return base.OnConnected();
         }

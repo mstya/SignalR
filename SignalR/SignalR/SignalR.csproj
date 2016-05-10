@@ -239,6 +239,7 @@
     <Content Include="Scripts\crypto-master\LICENSE" />
     <Content Include="Scripts\crypto-master\package.json" />
     <Content Include="Scripts\crypto-master\README.md" />
+    <None Include="Properties\PublishProfiles\SignalR20160509111556 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\crypto-master\aes-ctr.js" />
     <Content Include="Scripts\crypto-master\aes.js" />

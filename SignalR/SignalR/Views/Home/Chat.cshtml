@@ -6,23 +6,143 @@
     .chat-row {
         display: none;
     }
+
+    .chat {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+        .chat li {
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px dotted #B3A9A9;
+        }
+
+            .chat li.left .chat-body {
+                margin-left: 60px;
+            }
+
+            .chat li.right .chat-body {
+                margin-right: 60px;
+            }
+
+
+            .chat li .chat-body p {
+                margin: 0;
+                color: #777777;
+            }
+
+        .panel .slidedown .glyphicon, .chat .glyphicon {
+            margin-right: 5px;
+        }
+
+    .panel-body {
+        overflow-y: scroll;
+        height: 250px;
+    }
+
+    ::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+        background-color: #F5F5F5;
+    }
+
+    ::-webkit-scrollbar {
+        width: 12px;
+        background-color: #F5F5F5;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+        background-color: #555;
+    }
 </style>
 
-<h2>Super Chat</h2>
 <h3 id="helloMsg"></h3>
+@*<div class="container">
+
+        <div class="row input-row">
+            <input type="text" id="nick" placeholder="Введите ник" />
+            <input type="button" id="inputButton" value="Вход" />
+        </div>
+
+        <div class="row chat-row">
+            <input type="text" disabled class="disable-control" id="message" />
+            <input type="button" disabled class="disable-control" id="sendmessage" value="Send" />
+            <ul id="discussion"></ul>
+        </div>
+    </div>*@
+
 <div class="container">
+    <div class="row">
+        <div class="col-md-5">
 
-    <div class="row input-row">
-        <input type="text" id="nick" placeholder="Введите ник" />
-        <input type="button" id="inputButton" value="Вход" />
-    </div>
+            <div class="panel panel-primary nick-form">
+                <div class="panel-footer">
+                    <div class="input-group">
+                        <input id="nick" type="text" class="form-control input-sm" placeholder="Введите свое имя..." />
+                        <span class="input-group-btn">
+                            <button class="btn btn-warning btn-sm" id="inputButton">
+                                Войти
+                            </button>
+                        </span>
+                    </div>
+                </div>
+            </div>
 
-    <div class="row chat-row">
-        <input type="text" disabled class="disable-control" id="message" />
-        <input type="button" disabled class="disable-control" id="sendmessage" value="Send" />
-        <ul id="discussion"></ul>
+            <div class="panel panel-primary chat-row">
+                <div class="panel-heading">
+                    <span class="glyphicon glyphicon-comment"></span> Chat
+                </div>
+                <div class="panel-body">
+                    <ul class="chat">
+                        @*<li class="left clearfix">
+                            <span class="chat-img pull-left">
+                                <img src="http://placehold.it/50/55C1E7/fff&text=U" alt="User Avatar" class="img-circle" />
+                            </span>
+                            <div class="chat-body clearfix">
+                                <div class="header">
+                                    <strong class="primary-font">Jack Sparrow</strong>
+                                </div>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
+                                    dolor, quis ullamcorper ligula sodales.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="right clearfix">
+                            <span class="chat-img pull-right">
+                                <img src="http://placehold.it/50/FA6F57/fff&text=ME" alt="User Avatar" class="img-circle" />
+                            </span>
+                            <div class="chat-body clearfix">
+                                <div class="header">
+                                    <small class=" text-muted">&nbsp;</small>
+                                    <strong class="pull-right primary-font">Bhaumik Patel</strong>
+                                </div>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
+                                    dolor, quis ullamcorper ligula sodales.
+                                </p>
+                            </div>
+                        </li>*@
+                    </ul>
+                </div>
+                <div class="panel-footer">
+                    <div class="input-group">
+                        <input disabled id="message" type="text" class="disable-control form-control input-sm" placeholder="Type your message here..." />
+                        <span class="input-group-btn">
+                            <button disabled class="disable-control btn btn-warning btn-sm" id="sendmessage">
+                                Send
+                            </button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+
+
 @section scripts {
     <script src="~/Scripts/crypto-master/aes.js"></script>
     <script src="~/Scripts/crypto-master/aes-ctr.js"></script>
